@@ -48,7 +48,7 @@ inquirer
 // TODO: Create a function to write README file
 function writeToFile(dataObj) {
         const userInput = dataObj;
-        fs.writeFile('README.md', generateMarkdown(userInput), function(err) {
+        fs.writeFile('./GeneratedREADME/README.md', generateMarkdown(userInput), function(err) {
         err ? console.log(err) : console.log('file created!')}
         );
     };
