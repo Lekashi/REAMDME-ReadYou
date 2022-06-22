@@ -4,8 +4,6 @@ const generateMarkdown = require("./utils/generateMarkdown");
 const fs = require('fs');
 
 // TODO: Create an array of questions for user input
-const questions = [];
-
 inquirer
     .prompt([
         {
@@ -41,7 +39,7 @@ inquirer
                 "![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)", 
                 "![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)", 
                 "![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)",
-                "![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)",
+                "![License: BSD 3-Clause](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)",
             ],
         }
     ])
@@ -50,14 +48,7 @@ inquirer
 // TODO: Create a function to write README file
 function writeToFile(dataObj) {
         const userInput = dataObj;
-        console.log(dataObj);
         fs.writeFile('README.md', generateMarkdown(userInput), function(err) {
         err ? console.log(err) : console.log('file created!')}
         );
     };
-
-        // TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
